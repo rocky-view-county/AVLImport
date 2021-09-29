@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" />
+  <xs:import schemaLocation="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetLastPositionInfoAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastPositionInfoAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetLastPositionInfoAllResult" nillable="true" type="q1:PkgLastPositionResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastPositionInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="ads" nillable="true" type="q2:ArrayOfAssetId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastPositionInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetLastPositionInfoResult" nillable="true" type="q3:PkgLastPositionResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="mr" nillable="true" type="q4:ArrayOfMaintenanceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetMaintenanceInfoResult" nillable="true" type="q5:PkgMaintenanceResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceAssets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetMaintenanceAssetsResult" nillable="true" type="q6:PkgAssetFilterResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetFilters">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetFiltersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetAssetFiltersResult" nillable="true" type="q7:PkgAssetFilterResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventFilters">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventFiltersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetEventFiltersResult" nillable="true" type="q8:PkgEventFilterResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventFiltersFromAsset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="aid" nillable="true" type="q9:AssetId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventFiltersFromAssetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetEventFiltersFromAssetResult" nillable="true" type="q10:PkgEventFilterBaseResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetStates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="ads" nillable="true" type="q11:ArrayOfAssetId" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetStatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetAssetStatesResult" nillable="true" type="q12:PkgAssetStatesParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="ads" nillable="true" type="q13:ArrayOfAssetId" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="atypes" nillable="true" type="q14:ArrayOfstring" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="etypes" nillable="true" type="q15:ArrayOfstring" />
+        <xs:element minOccurs="0" name="startTimeGMT" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTimeGMT" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetEventsResult" nillable="true" type="q16:PkgQueryResultParams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRealtimePoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="aid" nillable="true" type="q17:AssetId" />
+        <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRealtimePointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetRealtimePointsResult" nillable="true" type="q18:PkgRealtimePointResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlotData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="req" nillable="true" type="q19:ArrayOfPlotPointRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlotDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" minOccurs="0" name="GetPlotDataResult" nillable="true" type="q20:PkgPlotPointResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

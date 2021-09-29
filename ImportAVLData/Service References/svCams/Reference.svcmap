@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4e7e1c69-ed66-4a37-97b9-e1c2e61e004e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.16.253.10:880/CAMSDataInterface/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="f90bae2f-03e3-4953-8b00-d536e92842f6" SourceId="1" SourceUrl="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd3" />
+    <MetadataFile FileName="CAMSDataInterface.wsdl" MetadataType="Wsdl" ID="57456b72-4643-40ca-a910-d125d496350f" SourceId="1" SourceUrl="http://172.16.253.10:880/CAMSDataInterface/?wsdl" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="e586737a-4558-4474-8f07-11ddda8c2109" SourceId="1" SourceUrl="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="00c3085d-03ad-4470-88d3-109069a57731" SourceId="1" SourceUrl="http://172.16.253.10:880/CAMSDataInterface/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="df374879-81d5-4963-acb8-3c1869baeb31" SourceId="1" SourceUrl="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd2" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="abc34b8f-15a9-4ccf-93ff-ebf5efbf8718" SourceId="1" SourceUrl="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

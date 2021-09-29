@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AVLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AgPickupA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="AgPickupB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ActiveA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="ActiveB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GraderStateLookUp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpeedMin" Type="int" />
+    <Property Name="SpeedMax" Type="int" />
+    <Property Name="Dsr" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="StateList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="300" />
+    <Property Name="State" Type="int" />
+    <Property Name="StateDesc" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="VehicleList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Status" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="GraderA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="GraderB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+    <Property Name="GuidID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="MowerA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="MowerB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PatchTruckA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="PatchTruckB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PlowSanderPickupA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="PlowSanderPickupB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PublicWorksA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="PublicWorksB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SnowplowSanderA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="SnowplowSanderB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SprayerA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="SprayerB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SupervisorA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="SupervisorB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WaterTruckA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysId" Type="int" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CollectedTime" Type="datetime" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="X_Coord" Type="float" />
+    <Property Name="Y_Coord" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="State" Type="int" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="20" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="ShapeGeography" Type="geography" />
+    <Property Name="SeqOrder" Type="int" />
+    <Property Name="ShapeLine" Type="geometry" />
+    <Property Name="StreetView" Type="varchar" MaxLength="300" />
+    <Property Name="SecDiff" Type="int" />
+  </EntityType>
+  <EntityType Name="WaterTruckB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SysWithDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="SysID" Type="int" />
+    <Property Name="ActivityTime" Type="datetime" />
+    <Property Name="StateDesc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShapeAgg" Type="geometry" />
+    <Property Name="ShapeLineAgg" Type="geometry" />
+    <Property Name="Shape" Type="geometry" />
+    <Property Name="SumOfSec" Type="int" />
+    <Property Name="SumOfDistance" Type="float" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="spUpdateStateList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SysId" Type="int" Mode="In" />
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="int" Mode="In" />
+    <Parameter Name="StateDesc" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdateVehicleList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SysId" Type="int" Mode="In" />
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="AVLModelStoreContainer">
+    <EntitySet Name="AgPickupA" EntityType="Self.AgPickupA" Schema="AgPickup" store:Type="Tables" />
+    <EntitySet Name="AgPickupB" EntityType="Self.AgPickupB" Schema="AgPickup" store:Type="Tables" />
+    <EntitySet Name="ActiveA" EntityType="Self.ActiveA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActiveB" EntityType="Self.ActiveB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GraderStateLookUp" EntityType="Self.GraderStateLookUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StateList" EntityType="Self.StateList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleList" EntityType="Self.VehicleList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GraderA" EntityType="Self.GraderA" Schema="Grader" store:Type="Tables" />
+    <EntitySet Name="GraderB" EntityType="Self.GraderB" Schema="Grader" store:Type="Tables" />
+    <EntitySet Name="MowerA" EntityType="Self.MowerA" Schema="Mower" store:Type="Tables" />
+    <EntitySet Name="MowerB" EntityType="Self.MowerB" Schema="Mower" store:Type="Tables" />
+    <EntitySet Name="PatchTruckA" EntityType="Self.PatchTruckA" Schema="PatchTruck" store:Type="Tables" />
+    <EntitySet Name="PatchTruckB" EntityType="Self.PatchTruckB" Schema="PatchTruck" store:Type="Tables" />
+    <EntitySet Name="PlowSanderPickupA" EntityType="Self.PlowSanderPickupA" Schema="PlowSanderPickup" store:Type="Tables" />
+    <EntitySet Name="PlowSanderPickupB" EntityType="Self.PlowSanderPickupB" Schema="PlowSanderPickup" store:Type="Tables" />
+    <EntitySet Name="PublicWorksA" EntityType="Self.PublicWorksA" Schema="PublicWorks" store:Type="Tables" />
+    <EntitySet Name="PublicWorksB" EntityType="Self.PublicWorksB" Schema="PublicWorks" store:Type="Tables" />
+    <EntitySet Name="SnowplowSanderA" EntityType="Self.SnowplowSanderA" Schema="SnowplowSander" store:Type="Tables" />
+    <EntitySet Name="SnowplowSanderB" EntityType="Self.SnowplowSanderB" Schema="SnowplowSander" store:Type="Tables" />
+    <EntitySet Name="SprayerA" EntityType="Self.SprayerA" Schema="Sprayer" store:Type="Tables" />
+    <EntitySet Name="SprayerB" EntityType="Self.SprayerB" Schema="Sprayer" store:Type="Tables" />
+    <EntitySet Name="SupervisorA" EntityType="Self.SupervisorA" Schema="Supervisor" store:Type="Tables" />
+    <EntitySet Name="SupervisorB" EntityType="Self.SupervisorB" Schema="Supervisor" store:Type="Tables" />
+    <EntitySet Name="WaterTruckA" EntityType="Self.WaterTruckA" Schema="WaterTruck" store:Type="Tables" />
+    <EntitySet Name="WaterTruckB" EntityType="Self.WaterTruckB" Schema="WaterTruck" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

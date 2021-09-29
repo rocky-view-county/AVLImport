@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" />
+  <xs:complexType name="ArrayOfKeyValueOfstringArrayOfEventFilterParamsIopHGrNL">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringArrayOfEventFilterParamsIopHGrNL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Value" nillable="true" type="q1:ArrayOfEventFilterParams" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringArrayOfEventFilterParamsIopHGrNL" nillable="true" type="tns:ArrayOfKeyValueOfstringArrayOfEventFilterParamsIopHGrNL" />
+  <xs:complexType name="ArrayOfKeyValueOfstringArrayOfEventFilterBaseIopHGrNL">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringArrayOfEventFilterBaseIopHGrNL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Value" nillable="true" type="q2:ArrayOfEventFilterBase" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringArrayOfEventFilterBaseIopHGrNL" nillable="true" type="tns:ArrayOfKeyValueOfstringArrayOfEventFilterBaseIopHGrNL" />
+  <xs:complexType name="ArrayOfKeyValueOfAssetIdArrayOfAssetStateParamsO2CMG0Ui">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfAssetIdArrayOfAssetStateParamsO2CMG0Ui">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Key" nillable="true" type="q3:AssetId" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Value" nillable="true" type="q4:ArrayOfAssetStateParams" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfAssetIdArrayOfAssetStateParamsO2CMG0Ui" nillable="true" type="tns:ArrayOfKeyValueOfAssetIdArrayOfAssetStateParamsO2CMG0Ui" />
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+  <xs:complexType name="ArrayOfKeyValueOfAssetIdArrayOfRealtimePointParamsO2CMG0Ui">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfAssetIdArrayOfRealtimePointParamsO2CMG0Ui">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Key" nillable="true" type="q5:AssetId" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Value" nillable="true" type="q6:ArrayOfRealtimePointParams" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfAssetIdArrayOfRealtimePointParamsO2CMG0Ui" nillable="true" type="tns:ArrayOfKeyValueOfAssetIdArrayOfRealtimePointParamsO2CMG0Ui" />
+  <xs:complexType name="ArrayOfKeyValueOfEventIdArrayOfRealtimePointParamsO2CMG0Ui">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfEventIdArrayOfRealtimePointParamsO2CMG0Ui">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Key" nillable="true" type="q7:EventId" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" name="Value" nillable="true" type="q8:ArrayOfRealtimePointParams" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfEventIdArrayOfRealtimePointParamsO2CMG0Ui" nillable="true" type="tns:ArrayOfKeyValueOfEventIdArrayOfRealtimePointParamsO2CMG0Ui" />
+</xs:schema>

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F55C61FF-3EA3-465B-9BD1-D4D16E16E925}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImportAVLData</RootNamespace>
+    <AssemblyName>ImportAVLData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjNet">
+      <HintPath>..\packages\ProjNet.1.2\lib\net20\ProjNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActiveB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgPickupA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgPickupB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetATO.cs" />
+    <Compile Include="dcAVL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcAVL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dcAVL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dcAVL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcAVL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GraderA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GraderB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GraderStateLookUp.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MowerA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MowerB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatchTruckA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatchTruckB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlowSanderPickupA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlowSanderPickupB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWorksA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWorksB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svCams\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SnowplowSanderA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SnowplowSanderB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SprayerA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SprayerB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StateList.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Util1.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="VehicleList.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WaterTruckA.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WaterTruckB.cs">
+      <DependentUpon>dcAVL.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="dcAVL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dcAVL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="dcAVL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dcAVL.edmx</DependentUpon>
+      <LastGenOutput>dcAVL.Context.cs</LastGenOutput>
+    </None>
+    <None Include="dcAVL.edmx.diagram">
+      <DependentUpon>dcAVL.edmx</DependentUpon>
+    </None>
+    <None Include="dcAVL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dcAVL.edmx</DependentUpon>
+      <LastGenOutput>dcAVL.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\svCams\CAMSDataInterface.wsdl" />
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgAssetFilterResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgAssetStatesParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgEventFilterBaseResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgEventFilterResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgLastPositionResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgMaintenanceResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgPlotPointResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgQueryResultParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\ImportAVLData.svCams.PkgRealtimePointResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svCams\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svCams\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svCams\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svCams\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\svCams\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svCams\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svCams\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svCams\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svCams\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

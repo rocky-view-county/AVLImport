@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CAMS_WCF.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://172.16.253.10:880/CAMSDataInterface/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="PkgLastPositionResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Positions" nillable="true" type="tns:ArrayOfLastPositionParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgLastPositionResults" nillable="true" type="tns:PkgLastPositionResults" />
+  <xs:complexType name="ArrayOfLastPositionParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LastPositionParams" nillable="true" type="tns:LastPositionParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLastPositionParams" nillable="true" type="tns:ArrayOfLastPositionParams" />
+  <xs:complexType name="LastPositionParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assetid" nillable="true" type="tns:AssetId" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Heading" type="xs:double" />
+      <xs:element minOccurs="0" name="LastHeardGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastPosHeardGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Lat" type="xs:double" />
+      <xs:element minOccurs="0" name="Lng" type="xs:double" />
+      <xs:element minOccurs="0" name="Speed" type="xs:double" />
+      <xs:element minOccurs="0" name="State" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LastPositionParams" nillable="true" type="tns:LastPositionParams" />
+  <xs:complexType name="AssetId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetId" nillable="true" type="tns:AssetId" />
+  <xs:complexType name="ArrayOfAssetId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetId" nillable="true" type="tns:AssetId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetId" nillable="true" type="tns:ArrayOfAssetId" />
+  <xs:complexType name="ArrayOfMaintenanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintenanceRequest" nillable="true" type="tns:MaintenanceRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintenanceRequest" nillable="true" type="tns:ArrayOfMaintenanceRequest" />
+  <xs:complexType name="MaintenanceRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assetid" nillable="true" type="tns:AssetId" />
+      <xs:element minOccurs="0" name="EndGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartGMT" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintenanceRequest" nillable="true" type="tns:MaintenanceRequest" />
+  <xs:complexType name="PkgMaintenanceResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pkg" nillable="true" type="tns:ArrayOfMaintenanceParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgMaintenanceResults" nillable="true" type="tns:PkgMaintenanceResults" />
+  <xs:complexType name="ArrayOfMaintenanceParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintenanceParams" nillable="true" type="tns:MaintenanceParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintenanceParams" nillable="true" type="tns:ArrayOfMaintenanceParams" />
+  <xs:complexType name="MaintenanceParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assetid" nillable="true" type="tns:AssetId" />
+      <xs:element minOccurs="0" name="ClientId" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalHours" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalMeters" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintenanceParams" nillable="true" type="tns:MaintenanceParams" />
+  <xs:complexType name="PkgAssetFilterResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assets" nillable="true" type="tns:ArrayOfAssetFilterParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgAssetFilterResults" nillable="true" type="tns:PkgAssetFilterResults" />
+  <xs:complexType name="ArrayOfAssetFilterParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetFilterParams" nillable="true" type="tns:AssetFilterParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetFilterParams" nillable="true" type="tns:ArrayOfAssetFilterParams" />
+  <xs:complexType name="AssetFilterParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AInfo" nillable="true" type="tns:AssetInfo" />
+      <xs:element minOccurs="0" name="ActiveState" type="tns:AssetFilterParams.ActiveStates" />
+      <xs:element minOccurs="0" name="Density" type="tns:AssetFilterParams.Densities" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetFilterParams" nillable="true" type="tns:AssetFilterParams" />
+  <xs:complexType name="AssetInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Assetid" nillable="true" type="tns:AssetId" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetInfo" nillable="true" type="tns:AssetInfo" />
+  <xs:simpleType name="AssetFilterParams.ActiveStates">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Deactive" />
+      <xs:enumeration value="Active" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AssetFilterParams.ActiveStates" nillable="true" type="tns:AssetFilterParams.ActiveStates" />
+  <xs:simpleType name="AssetFilterParams.Densities">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sparse">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dense">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AssetFilterParams.Densities" nillable="true" type="tns:AssetFilterParams.Densities" />
+  <xs:complexType name="PkgEventFilterResults">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventTypes" nillable="true" type="q1:ArrayOfKeyValueOfstringArrayOfEventFilterParamsIopHGrNL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgEventFilterResults" nillable="true" type="tns:PkgEventFilterResults" />
+  <xs:complexType name="ArrayOfEventFilterParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventFilterParams" nillable="true" type="tns:EventFilterParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventFilterParams" nillable="true" type="tns:ArrayOfEventFilterParams" />
+  <xs:complexType name="EventFilterParams">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EventFilterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AssetType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventFilterParams" nillable="true" type="tns:EventFilterParams" />
+  <xs:complexType name="EventFilterBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventDataType" type="tns:EventFilterBase.EventDataTypes" />
+      <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventFilterBase" nillable="true" type="tns:EventFilterBase" />
+  <xs:simpleType name="EventFilterBase.EventDataTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Point">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Line">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EventFilterBase.EventDataTypes" nillable="true" type="tns:EventFilterBase.EventDataTypes" />
+  <xs:complexType name="PkgEventFilterBaseResults">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventTypes" nillable="true" type="q2:ArrayOfKeyValueOfstringArrayOfEventFilterBaseIopHGrNL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgEventFilterBaseResults" nillable="true" type="tns:PkgEventFilterBaseResults" />
+  <xs:complexType name="ArrayOfEventFilterBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventFilterBase" nillable="true" type="tns:EventFilterBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventFilterBase" nillable="true" type="tns:ArrayOfEventFilterBase" />
+  <xs:complexType name="PkgAssetStatesParams">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AssetStates" nillable="true" type="q3:ArrayOfKeyValueOfAssetIdArrayOfAssetStateParamsO2CMG0Ui" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgAssetStatesParams" nillable="true" type="tns:PkgAssetStatesParams" />
+  <xs:complexType name="ArrayOfAssetStateParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetStateParams" nillable="true" type="tns:AssetStateParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetStateParams" nillable="true" type="tns:ArrayOfAssetStateParams" />
+  <xs:complexType name="AssetStateParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="State" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="StateDscr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetStateParams" nillable="true" type="tns:AssetStateParams" />
+  <xs:complexType name="PkgQueryResultParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueryResults" nillable="true" type="tns:ArrayOfQueryResultParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgQueryResultParams" nillable="true" type="tns:PkgQueryResultParams" />
+  <xs:complexType name="ArrayOfQueryResultParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueryResultParams" nillable="true" type="tns:QueryResultParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueryResultParams" nillable="true" type="tns:ArrayOfQueryResultParams" />
+  <xs:complexType name="QueryResultParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AInfo" nillable="true" type="tns:AssetInfo" />
+      <xs:element minOccurs="0" name="Density" type="tns:QueryResultParams.Densities" />
+      <xs:element minOccurs="0" name="Distance" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="EndTimeGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="EventType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTimeGMT" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResultParams" nillable="true" type="tns:QueryResultParams" />
+  <xs:simpleType name="QueryResultParams.Densities">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sparse">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dense">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QueryResultParams.Densities" nillable="true" type="tns:QueryResultParams.Densities" />
+  <xs:complexType name="PkgRealtimePointResults">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RTPoints" nillable="true" type="q4:ArrayOfKeyValueOfAssetIdArrayOfRealtimePointParamsO2CMG0Ui" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgRealtimePointResults" nillable="true" type="tns:PkgRealtimePointResults" />
+  <xs:complexType name="ArrayOfRealtimePointParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RealtimePointParams" nillable="true" type="tns:RealtimePointParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRealtimePointParams" nillable="true" type="tns:ArrayOfRealtimePointParams" />
+  <xs:complexType name="RealtimePointParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lat" type="xs:double" />
+      <xs:element minOccurs="0" name="Lng" type="xs:double" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeGMT" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RealtimePointParams" nillable="true" type="tns:RealtimePointParams" />
+  <xs:complexType name="ArrayOfPlotPointRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlotPointRequest" nillable="true" type="tns:PlotPointRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlotPointRequest" nillable="true" type="tns:ArrayOfPlotPointRequest" />
+  <xs:complexType name="PlotPointRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EAId" nillable="true" type="tns:EventAssetId" />
+      <xs:element minOccurs="0" name="EndGMT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartGMT" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlotPointRequest" nillable="true" type="tns:PlotPointRequest" />
+  <xs:complexType name="EventAssetId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assetid" nillable="true" type="tns:AssetId" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventAssetId" nillable="true" type="tns:EventAssetId" />
+  <xs:complexType name="PkgPlotPointResults">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PlotPoints" nillable="true" type="q5:ArrayOfKeyValueOfEventIdArrayOfRealtimePointParamsO2CMG0Ui" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PkgPlotPointResults" nillable="true" type="tns:PkgPlotPointResults" />
+  <xs:complexType name="EventId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventId" nillable="true" type="tns:EventId" />
+</xs:schema>

@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AVLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dcAVL" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActiveAs" EntityType="AVLModel.ActiveA" />
+    <EntitySet Name="ActiveBs" EntityType="AVLModel.ActiveB" />
+    <EntitySet Name="GraderStateLookUps" EntityType="AVLModel.GraderStateLookUp" />
+    <EntitySet Name="VehicleLists" EntityType="AVLModel.VehicleList" />
+    <EntitySet Name="StateLists" EntityType="AVLModel.StateList" />
+    <EntitySet Name="GraderAs" EntityType="AVLModel.GraderA" />
+    <EntitySet Name="GraderBs" EntityType="AVLModel.GraderB" />
+    <EntitySet Name="SnowplowSanderAs" EntityType="AVLModel.SnowplowSanderA" />
+    <EntitySet Name="SnowplowSanderBs" EntityType="AVLModel.SnowplowSanderB" />
+    <EntitySet Name="MowerAs" EntityType="AVLModel.MowerA" />
+    <EntitySet Name="MowerBs" EntityType="AVLModel.MowerB" />
+    <EntitySet Name="PublicWorksAs" EntityType="AVLModel.PublicWorksA" />
+    <EntitySet Name="PublicWorksBs" EntityType="AVLModel.PublicWorksB" />
+    <EntitySet Name="PlowSanderPickupAs" EntityType="AVLModel.PlowSanderPickupA" />
+    <EntitySet Name="PlowSanderPickupBs" EntityType="AVLModel.PlowSanderPickupB" />
+    <EntitySet Name="SprayerAs" EntityType="AVLModel.SprayerA" />
+    <EntitySet Name="SprayerBs" EntityType="AVLModel.SprayerB" />
+    <EntitySet Name="SupervisorAs" EntityType="AVLModel.SupervisorA" />
+    <EntitySet Name="SupervisorBs" EntityType="AVLModel.SupervisorB" />
+    <EntitySet Name="PatchTruckAs" EntityType="AVLModel.PatchTruckA" />
+    <EntitySet Name="PatchTruckBs" EntityType="AVLModel.PatchTruckB" />
+    <FunctionImport Name="spUpdateStateList">
+      <Parameter Name="SysId" Mode="In" Type="Int32" />
+      <Parameter Name="VehicleType" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="Int32" />
+      <Parameter Name="StateDesc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateVehicleList">
+      <Parameter Name="SysId" Mode="In" Type="Int32" />
+      <Parameter Name="VehicleType" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="WaterTruckAs" EntityType="AVLModel.WaterTruckA" />
+    <EntitySet Name="WaterTruckBs" EntityType="AVLModel.WaterTruckB" />
+    <EntitySet Name="AgPickupAs" EntityType="AVLModel.AgPickupA" />
+    <EntitySet Name="AgPickupBs" EntityType="AVLModel.AgPickupB" />
+  </EntityContainer>
+  <EntityType Name="ActiveA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ActiveB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GraderStateLookUp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SpeedMin" Type="Int32" />
+    <Property Name="SpeedMax" Type="Int32" />
+    <Property Name="Dsr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VehicleList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="StateList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="StateDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="GraderA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GraderB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GuidID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="SnowplowSanderA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SnowplowSanderB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MowerA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MowerB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PublicWorksA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PublicWorksB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PlowSanderPickupA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PlowSanderPickupB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SprayerA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SprayerB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SupervisorA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SupervisorB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PatchTruckA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PatchTruckB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WaterTruckA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WaterTruckB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AgPickupA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysId" Type="Int32" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CollectedTime" Type="DateTime" Precision="3" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="X_Coord" Type="Double" />
+    <Property Name="Y_Coord" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="VehicleType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="ShapeGeography" Type="Geography" />
+    <Property Name="SeqOrder" Type="Int32" />
+    <Property Name="ShapeLine" Type="Geometry" />
+    <Property Name="StreetView" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="SecDiff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AgPickupB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SysWithDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SysID" Type="Int32" />
+    <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="StateDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShapeAgg" Type="Geometry" />
+    <Property Name="ShapeLineAgg" Type="Geometry" />
+    <Property Name="Shape" Type="Geometry" />
+    <Property Name="SumOfSec" Type="Int32" />
+    <Property Name="SumOfDistance" Type="Double" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
